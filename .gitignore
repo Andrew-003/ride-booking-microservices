@@ -1,0 +1,12 @@
+# Windows Zone.Identifier files
+*:Zone.Identifier
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Build output
+target/
+*.class
+# Logs
+*.log
