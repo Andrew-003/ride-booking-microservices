@@ -34,15 +34,13 @@ public class LocationController {
     private final LocationService locationService;
     
     //Driver calls this endpoint every few seconds to update its location
-    @PutMapping("/drivers/{driverId}")
+    @PutMapping("/drivers/update")
     public ResponseEntity<String> updateDriverLocation(
-        @PathVariable String driverId,
         @Valid 
         @RequestBody 
         DriverLocationRequest driverLocationRequest){
-            driverLocationRequest.setDriverId(driverId);
             locationService.updateDriverLocation(driverLocationRequest);
-            log.debug("updated location for Driver {}",driverId);
+            log.debug("updated location for Driver {}",driverLocationRequest.getDriverId());
             return ResponseEntity.ok("Driver Location Updated");
     }
 
