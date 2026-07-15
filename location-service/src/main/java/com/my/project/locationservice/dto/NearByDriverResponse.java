@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -15,13 +16,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class NearByDriverResponse {
     @NotBlank
     private String driverId;
 
     @DecimalMin("-180")
     @DecimalMax("180")
-    private double longtitude;
+    private double longitude;
 
     @DecimalMin("-90")
     @DecimalMax("90")
