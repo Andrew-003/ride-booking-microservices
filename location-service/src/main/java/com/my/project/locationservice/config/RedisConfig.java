@@ -16,8 +16,7 @@ public class RedisConfig {
         //String serailizer makes data human readable in Redis CLI
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new StringRedisSerializer());
-        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
-        redisTemplate.setHashValueSerializer(new StringRedisSerializer());
+
         return redisTemplate;
     }
 }
