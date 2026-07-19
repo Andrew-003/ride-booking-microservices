@@ -2,8 +2,6 @@ package com.my.project.locationservice.dto;
 
 import jakarta.validation.constraints.DecimalMax;
 import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,7 +27,7 @@ public class NearByDriverResponse {
     @DecimalMax("90")
     private double latitude;
 
-    @Min(1)
-    @Max(50)
+    @DecimalMin("1")
+    @DecimalMax("50")
     private double distanceInKm;
 }

@@ -18,8 +18,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Max;
-import jakarta.validation.constraints.Min;
+
 
 /*
  * Location Controller
@@ -49,8 +48,7 @@ public class LocationController {
     public ResponseEntity<List<NearByDriverResponse>> getNearByDrivers(
         @RequestParam double longitude,
         @RequestParam double latitude,
-        @Min(1)
-        @Max(50)
+        @Valid
         @RequestParam(defaultValue="5.0") 
         double radius){
             List<NearByDriverResponse> nearByDrivers=locationService.getNearByDrivers(longitude,latitude,radius);
